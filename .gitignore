@@ -1,5 +1,5 @@
 db_password.secret
-.terraform
+.terraform*
 */.terraform
 */providers.tf
 */.terraform.lock.hcl
