@@ -1,0 +1,6 @@
+db_password.secret
+.terraform
+*/.terraform
+*/providers.tf
+*/.terraform.lock.hcl
+*/backend.tf
