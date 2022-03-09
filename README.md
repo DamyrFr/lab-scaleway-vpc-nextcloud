@@ -1,6 +1,6 @@
 # Lab Scaleway VPC : Deploy a Nextcloud instance
 
-This Git repository is link to this article [Test des réseaux privés Scaleway (Fr)]().
+This Git repository is linked to this article [Test des réseaux privés Scaleway (Fr)](https://www.damyr.fr/posts/scaleway-vpc/).
 
 But, if you want to try this code, or just have fun, you can find all important information on this repository.
 
@@ -33,7 +33,7 @@ I strongly recommend using [asdf](https://github.com/asdf-vm/asdf) to install `T
 
 ### Configure your Scaleway account
 
-To deploy this project, I use [authentification by profile](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs#shared-configuration-file). You can configure it easily by putting on `$HOME/.config/scw/config.yaml` following configuration (obviously with your credentials and tokens) : 
+To deploy this project, I use [authentication by profile](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs#shared-configuration-file). You can configure it easily by putting on `$HOME/.config/scw/config.yaml` following configuration (obviously with your credentials and tokens) : 
 
 ```yaml
 profiles:
@@ -58,13 +58,13 @@ And update all configurations with your information on : `./terragrunt.hcl`
 
 `Terraform` is separate on 5 different layers to facilitate maintenance and deployment. Dependency between each layer and global deployment is handled by `Terragrunt`.
 
-After that you can directly exec `Terraform` command on all layers by using : `terragrunt run-all [init|plan|apply|destroy]`
+After that you can directly execute `Terraform` command on all layers by using : `terragrunt run-all [init|plan|apply|destroy]`
 
 > Important note, you can encounter error on deployment due to largeness on deployment. If this happens just relaunch it :) 
 
 ### Terminate configuration
 
-When you have finished to deploy all the stack, got the load balancer public IP and complete the form using following information :
+When you have finished to deploy all the stack, got the load balancer public IP and complete the form using the following information :
 * username : `Nextcloud`
 * password : `./db_password.secret` (created on deployment)
 * private IP : `10.1.0.200` on the default configuration.
@@ -73,4 +73,4 @@ Validate, wait like 4-5 minutes and enjoy.
 
 ## Other / notes
 
-If you check the code you can see a script on `./bin/get_ip_from_hostname.sh`, this is a little script used on external datasource to retrieve lease from DHCP.
+If you check the code you can see a script on `./bin/get_ip_from_hostname.sh`, this is a little script used on external data source to retrieve lease from DHCP.
